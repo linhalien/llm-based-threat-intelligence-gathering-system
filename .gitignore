@@ -1,0 +1,43 @@
+# =========================
+# Python & Environments
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+.Python
+
+# =========================
+# Database & Data
+# =========================
+# Ignore the active SQLite database and Write-Ahead Logging (WAL) files
+threat_intel.db
+*.sqlite3
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# =========================
+# Secrets & API Keys
+# =========================
+# NEVER push API keys (like AlienVault OTX) to Git
+.env
+secrets.json
+
+# =========================
+# Outputs & Reports
+# =========================
+# Ignore the final generated LLM reports
+reports/
+*.txt
+
+# =========================
+# IDEs & OS Files
+# =========================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
