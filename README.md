@@ -56,9 +56,8 @@ ollama pull llama3
 
 Create a .env file in the root directory and add your API keys:
 ``` bash
+NVD_API_KEY="your_nvd_api_key_here" #OPTIONAL
 OTX_API_KEY="your_alienvault_api_key_here"
-# NVD_API_KEY="your_nvd_api_key_here" #OPTIONAL
-# OTX_API_KEY="your_otx_api_key_here"
 ```
 
 **10. Testing collectors**
