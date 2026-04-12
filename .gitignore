@@ -30,9 +30,9 @@ secrets.json
 # =========================
 # Outputs & Reports
 # =========================
-# Ignore the final generated LLM reports
-reports/
-*.txt
+# Ignore text files INSIDE the reports folder, but track the folder itself
+reports/*.txt
+!reports/.gitkeep
 
 # =========================
 # IDEs & OS Files
@@ -41,3 +41,9 @@ reports/
 .idea/
 .DS_Store
 Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
