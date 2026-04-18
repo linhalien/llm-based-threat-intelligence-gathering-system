@@ -7,7 +7,7 @@ from datetime import datetime, timedelta, timezone
 from typing import Any
 
 from collectors.base_collector import BaseCollector
-from db.queries import insert_raw_item
+from db.queries import insert_raw_item, get_unprocessed_batch
 
 # Regular expression to identify CVE IDs (e.g., CVE-2021-44228)
 CVE_ID_PATTERN = re.compile(r"^CVE-\d{4}-\d{4,}$", re.IGNORECASE)
@@ -283,3 +283,4 @@ if __name__ == "__main__":
 
     print("-" * 60)
     print(f"[*] Success! Saved new: {success_count} | Duplicates: {duplicate_count}")
+    # print(get_unprocessed_batch(10))
