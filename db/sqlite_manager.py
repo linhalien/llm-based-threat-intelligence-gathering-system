@@ -57,11 +57,11 @@ def insert_raw_item(data: tuple) -> int:
         if cursor.lastrowid:
             return cursor.lastrowid
         # INSERT OR IGNORE skipped a duplicate — fetch the existing row's ID - the row that has the same dedup_key
-        cursor2 = conn.execute(
-            "SELECT id FROM raw_items WHERE dedup_key = ?", (data[-1],)
-        )
-        row = cursor2.fetchone()
-        return row["id"] if row else 0
+        #cursor2 = conn.execute(
+        #    "SELECT id FROM raw_items WHERE dedup_key = ?", (data[-1],)
+        #)
+        #row = cursor2.fetchone()
+        #return row["id"] if row else 0
 
 def store_processed_description(item_id: int, description: str):
     """Updates the description field of a raw item after HTML stripping and translation."""
