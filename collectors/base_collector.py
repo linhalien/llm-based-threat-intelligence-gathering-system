@@ -120,8 +120,11 @@ class BaseCollector(ABC):
                     str(record.get("raw", {})),   # stored as string per schema
                     record["dedup_key"],
             )
-                insert_raw_item(data_tuple)
-                inserted += 1
+                row_id = insert_raw_item(data_tuple)
+                if row_id is not None:
+                    inserted += 1
+                else:
+                    skipped += 1
             except Exception as e:
                 print(f"[!] Database error on insert: {e}")
                 skipped += 1
